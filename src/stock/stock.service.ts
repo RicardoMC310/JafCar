@@ -26,14 +26,14 @@ export class StockService {
     }
 
     if (params.status?.trim()) {
-      query.andWhere('stock.status = :status', {
-        status: params.status.trim(),
+      query.andWhere('stock.status ILIKE :status', {
+        status: `%${params.status.trim()}%`,
       });
     }
 
     if (params.type?.trim()) {
-      query.andWhere('stock.type = :type', {
-        type: params.type.trim(),
+      query.andWhere('stock.type ILIKE :type', {
+        type: `%${params.type.trim()}%,
       });
     }
 
