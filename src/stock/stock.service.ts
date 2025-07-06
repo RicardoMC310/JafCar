@@ -33,7 +33,7 @@ export class StockService {
 
     if (params.type?.trim()) {
       query.andWhere('stock.type ILIKE :type', {
-        type: `%${params.type.trim()}%,
+        type: `%${params.type.trim()}%`,
       });
     }
 
